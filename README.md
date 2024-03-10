@@ -1,2 +1,1 @@
-roaa lotfy <roaa.m.lotfy@gmail.com>
-ziad khaled <ziadshraf100@gmail.com>
+This is a clone for AirBnB website
