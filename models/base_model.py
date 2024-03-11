@@ -2,6 +2,7 @@
 
 from datetime import datetime
 import uuid
+import models
 
 """
 This is the Parent Class
@@ -21,10 +22,12 @@ class BaseModel:
         if(len(kwargs) != 0):
             self.id = kwargs['id']
             self.created_at = datetime.strptime(kwargs['created_at'], format)
+            self.updated_at = datetime.utcnow()
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.utcnow()
             self.updated_at = datetime.utcnow()
+        models.storage.new(self)
 
     def __str__(self):
         """
@@ -37,6 +40,7 @@ class BaseModel:
         updates this object date
         """
         self.updated_at = datetime.utcnow()
+        models.storage.save()
 
     def to_dict(self):
         """
