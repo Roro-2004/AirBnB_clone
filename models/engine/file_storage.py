@@ -17,12 +17,12 @@ class FileStorage:
 
     def all(self):
         """getter for the dictionary"""
-        return self.__objects
+        return FileStorage.__objects
 
     def new(self, obj):
         """setter for the object"""
         key = obj.__class__.__name__ + '.' + obj.id
-        self.__objects[key] = obj
+        FileStorage.__objects[key] = obj
 
     def save(self):
         """serializing data into the file"""
