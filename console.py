@@ -6,12 +6,13 @@ AirBnB Console Class
 
 
 class HBNBCommand(cmd.Cmd):
-
     """
     The command prompot interpreter
+
     Attributes:
         prompt:  prompt string
     """
+
     prompt = "(hbnb)"
 
     def do_quit(self, args):
