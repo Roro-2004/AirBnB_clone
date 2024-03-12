@@ -4,6 +4,7 @@ AirBnB Console Class
 """
 import cmd
 
+
 class HBNBCommand(cmd.Cmd):
     """
     The command prompot interpreter
@@ -24,6 +25,9 @@ class HBNBCommand(cmd.Cmd):
         """
         exit the program
         """
+        return True
+
+    def emptyline(self):
         return True
 
 
