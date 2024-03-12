@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-import cmd
 """
 AirBnB Console Class
 """
-
+import cmd
 
 class HBNBCommand(cmd.Cmd):
     """
