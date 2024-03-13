@@ -137,15 +137,18 @@ class HBNBCommand(cmd.Cmd):
             print("** value missing **")
         else:
             key = commands[0] + '.' + commands[1]
-            object = loaded[key]
-            att_name = commands[2]
-            att_val = commands[3]
-            try:
-                att_val = eval(att_val)
-            except Exception:
-                pass
-            setattr(object, att_name, att_val)
-            object.save()
+            if key not in loaded:
+                print("** no instance found **")
+            else:
+                object = loaded[key]
+                att_name = commands[2]
+                att_val = commands[3]
+                try:
+                    att_val = eval(att_val)
+                except Exception:
+                    pass
+                setattr(object, att_name, att_val)
+                object.save()
 
 
 if __name__ == '__main__':
