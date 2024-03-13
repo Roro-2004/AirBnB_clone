@@ -47,3 +47,10 @@ class FileStorage:
                         FileStorage.__objects[k] = to_be_added
                 except Exception:
                     pass
+
+    def edit(self,kwargs):
+        saved = {}
+        for k in kwargs.keys():
+            saved[k] = kwargs[k].to_dict()
+        with open(FileStorage.__file_path, 'w') as file:
+            json.dump(saved, file)
